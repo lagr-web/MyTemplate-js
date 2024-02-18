@@ -3,12 +3,13 @@
 import Card from "@/components/Card";
 import data from "@/data/data.json";
 import { useEffect, useState } from "react";
-import { isMobile } from "react-device-detect";
+//import PhoneLink from '@/components/PhoneLink';
+import usePhoneLink from "./hooks/usePhoneLink";
 
 const Page = () => {
 
   const phoneNumber = '123456';
-  const phoneLink = isMobile ? <a className="hover:text-gray-300" href={`tel:${phoneNumber}`}>{phoneNumber}</a> : phoneNumber;
+  const phoneLink = usePhoneLink(phoneNumber);
 
   console.log(Object.keys(data.category));
 
@@ -36,7 +37,7 @@ const Page = () => {
       }
 
       <footer className="bg-black text-white p-1 text-center object-bottom">
-        mail:manglerbarelige@gmail.com | mobil:{phoneLink}
+        mail:manglerbarelige@gmail.com | mobil: {phoneLink}
       </footer>
 
     </>
