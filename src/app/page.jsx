@@ -4,12 +4,15 @@ import Card from "@/components/Card";
 import data from "@/data/data.json";
 import { useEffect, useState } from "react";
 //import PhoneLink from '@/components/PhoneLink';
-import usePhoneLink from "./hooks/usePhoneLink";
+import usePhoneLink from "@/hooks/usePhoneLink";
 
 const Page = () => {
 
   const phoneNumber = '123456';
   const phoneLink = usePhoneLink(phoneNumber);
+ 
+
+
 
   console.log(Object.keys(data.category));
 
@@ -17,11 +20,12 @@ const Page = () => {
     <>
     
       <header className="w-full bg-black h-10 p-2 text-white text-right font-bold text-lg ">Poul Kendis</header>
-      <div>intro</div>
+      
+      <div className="w-2/5 mx-auto my-10">{data.intro.content}</div>
       {
         Object.keys(data.category).map((category, index) => (
           <section className="z-0 container mx-auto my-10" key={index}>
-            <div className="w-20 bg-black text-white font-bold m-4 text-center rounded-lg md:mx-0 sm:mx-5 lg:mx-2 xl:mx-20 text-xl">
+            <div className="w-20 bg-black text-white font-bold m-4 text-center rounded-lg mx-5 md:mx-2  lg:mx-2 xl:mx-20 text-xl">
               {category}
             </div>
             <div className="cardwrapper">
