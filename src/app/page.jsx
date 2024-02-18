@@ -11,9 +11,6 @@ const Page = () => {
   const phoneNumber = '123456';
   const phoneLink = usePhoneLink(phoneNumber);
  
-
-
-
   console.log(Object.keys(data.category));
 
   return (
